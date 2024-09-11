@@ -5,8 +5,9 @@
             <ul class="flex space-x-4">
                 <li><a href="/" class="hover:underline">{{ trans('components/header.menu-option-1') }}</a></li>
                 <li><a href="/shop" class="hover:underline">{{ trans('components/header.menu-option-2') }}</a></li>
-                <li><a href="/contact" class="hover:underline">{{ trans('components/header.menu-option-3') }}</a></li>
-                <li><a href="/contact" class="hover:underline"></a></li>
+                <li><a href="/cart" class="hover:underline">{{ trans('components/header.menu-option-3') }}</a></li>
+                <li><a href="/contact" class="hover:underline">{{ trans('components/header.menu-option-4') }}</a></li>
+                
             </ul>
         </nav>
     </div>

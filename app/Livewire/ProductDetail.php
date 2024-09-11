@@ -9,13 +9,13 @@ class ProductDetail extends Component
 {
     public $product;
 
-    public function mount($id)
+    public function mount($productId)
     {
-        $this->product = ProductModel::findOrFail($id);
+        $this->product = ProductModel::findOrFail($productId);
     }
 
     public function render()
     {
-        return view('livewire.product-detail')->extends('layouts.app');
+        return view('livewire.product-detail');
     }
 }

@@ -1,5 +1,14 @@
 @extends('layouts.app')
-
+<?php
+seo()
+->title(env('APP_NAME'), 'Tu plataforma para comprar pescado y marisco online')
+->description('Encuentra pescados y mariscos frescos con nuestra aplicación. Del mar a tu casa en menos de 24 horas.')
+->images(
+    'https://mywebsite.com/images/blog-1/cover-image.webp',
+    'https://mywebsite.com/images/blog-1/another-image.webp',
+);
+?>
+@metadata
 @section('content')
 <!-- Hero Section -->
 <section class="relative bg-sky-700 text-white overflow-hidden">
