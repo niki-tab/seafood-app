@@ -9,12 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     @livewireStyles
 </head>
-<body>
+<body class="min-h-screen flex flex-col">
     <header>
         <x-header />
     </header>
 
-    <main>
+    <main class="flex-grow container mx-auto">
         @yield('content')
     </main>
 
