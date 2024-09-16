@@ -11,7 +11,7 @@
 </head>
 <body class="min-h-screen flex flex-col">
     <header>
-        <x-header />
+        <x-header-desktop/>
     </header>
 
     <main class="flex-grow container mx-auto">
@@ -19,7 +19,8 @@
     </main>
 
     <footer>
-        <x-footer />
+        <x-footer-desktop />
+        <x-footer-mobile />
     </footer>
     @livewireScripts
 </body>
