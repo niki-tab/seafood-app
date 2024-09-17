@@ -1,7 +1,7 @@
 <div class="md:hidden bg-sky-700 text-white p-4 mt-4">
     <div class="container mx-auto text-center">
         <div class="col-span-4 text-center mt-4">
-                <img src="{{ asset("images/logo/logo_01.png") }}" alt="logo" width="170" height="78" class="mx-auto block"></img>
+                <img src="{{ asset("images/logo/logo_centollo_02.png") }}" alt="logo" width="170" height="78" class="mx-auto block"></img>
         </div>
         <div class="grid grid-cols-4 gap-2 mt-8 mb-8"> 
             <!-- Column 1 -->

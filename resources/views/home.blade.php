@@ -11,14 +11,14 @@ seo()
 @metadata
 @section('content')
 <!-- Hero Section -->
-<section class="relative bg-sky-700 text-white overflow-hidden">
+<section class="relative overflow-hidden">
     <div class="absolute inset-0">
         <img src="{{ asset('images/hero-background.jpg') }}" alt="Fresh Seafood" class="w-full h-full object-cover opacity-50">
     </div>
     <div class="relative z-10 container mx-auto px-6 py-16 flex flex-col items-center text-center">
         <h1 class="text-4xl md:text-6xl font-bold mb-4">{{ trans('pages/home.hero_title') }}</h1>
         <p class="text-lg md:text-2xl mb-8">{{ trans('pages/home.hero_subtitle') }}</p>
-        <a href="{{ url('/shop') }}" class="bg-white text-sky-700 py-3 px-6 rounded-lg text-lg font-semibold hover:bg-gray-200">{{ trans('pages/home.shop_now') }}</a>
+        <a href="{{ url('/shop') }}" class="bg-sky-700 text-white py-3 px-6 rounded-lg text-lg font-semibold hover:bg-gray-200">{{ trans('pages/home.shop_now') }}</a>
     </div>
 </section>
 

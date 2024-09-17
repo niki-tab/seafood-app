@@ -10,11 +10,12 @@
     @livewireStyles
 </head>
 <body class="min-h-screen flex flex-col">
-    <header>
+    <header class="z-10">
         <x-header-desktop/>
+        <x-header-mobile/>
     </header>
 
-    <main class="flex-grow container mx-auto">
+    <main class="flex-grow container mx-auto z-0 mt-24">
         @yield('content')
     </main>
 

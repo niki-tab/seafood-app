@@ -1,6 +1,6 @@
-<div class="bg-sky-700 text-white p-4">
+<div class="hidden md:grid fixed top-0 left-0 w-full bg-sky-700 text-white p-4 px-12 z-10">
     <div class="container mx-auto flex justify-between items-center">
-        <a href="/" class=""><img src="{{ asset("images/logo/logo_02.png") }}" alt="logo" width="250" height="78"></img></a>
+        <a href="/" class=""><img src="{{ asset("images/logo/logo_centollo_01.png") }}" alt="logo" width="180" height="78"></img></a>
         
         <nav>
             <ul class="flex space-x-4">
