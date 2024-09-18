@@ -4,10 +4,10 @@
         
         <nav>
             <ul class="flex space-x-4">
-                <li><a href="/" class="hover:underline">{{ trans('components/header.menu-option-1') }}</a></li>
-                <li><a href="/shop" class="hover:underline">{{ trans('components/header.menu-option-2') }}</a></li>
-                <li><a href="/cart" class="hover:underline">{{ trans('components/header.menu-option-3') }}</a></li>
-                <li><a href="/contact" class="hover:underline">{{ trans('components/header.menu-option-4') }}</a></li>
+                <li><a href="/" class="{{ request()->is('/') ? 'font-bold text-yellow-300' : 'text-white' }} hover:underline">{{ trans('components/header.menu-option-1') }}</a></li>
+                <li><a href="/shop" class="{{ request()->is('shop') ? 'font-bold text-yellow-300' : 'text-white' }} hover:underline">{{ trans('components/header.menu-option-2') }}</a></li>
+                <li><a href="/cart" class="{{ request()->is('cart') ? 'font-bold text-yellow-300' : 'text-white' }} hover:underline">{{ trans('components/header.menu-option-3') }}</a></li>
+                <li><a href="/contact" class="{{ request()->is('contact') ? 'font-bold text-yellow-300' : 'text-white' }} hover:underline">{{ trans('components/header.menu-option-4') }}</a></li>
                 
             </ul>
         </nav>
