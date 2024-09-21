@@ -11,7 +11,7 @@
                     
                     <div class="flex items-center justify-between">
                         <span class="text-lg font-bold text-gray-900">${{ number_format($product->price, 2) }}</span>
-                        <a href="{{ route('product.show', $product->id) }}" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">{{ __('View Product') }}</a>
+                        <a href="{{ route('product.show', ['locale' => app()->getLocale(), 'productId' => $product->id]) }}" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">{{ __('View Product') }}</a>
                     </div>
                 </div>
             </div>

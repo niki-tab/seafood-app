@@ -24,31 +24,34 @@ use App\Http\Controllers\TestController;
     return view('welcome');
 });*/
 
+Route::group(['prefix' => '{locale}', 'middleware' => 'set.user.language'], function () {
+    
+    Route::get('/shop', function () {
+        return view('pages/shop');
+    })->name('shop.show');
+    
+    Route::get('/shop/product/{productId}', function () {
+        return view('pages/product-detail');
+    })->name('product.show');
+    
+    //Route::get('/shop/product/{id}', ProductDetail::class)->name('product.show');
+    
+    Route::get('/cart', function () {
+        return view('pages/cart');
+    })->name('cart.show');
+    
+    //Route::get('/test', [TestController::class, 'index']);
+    /*Route::get('/cart', function () {
+        return view('cart');
+    })->name('cart');*/
+    
+    //Route::get('/test', [TestController::class, 'index']);
+    Route::get('/test', function () {
+        return view('pages/test');
+    })->name('test');
+    
+    Route::get('/', [HomeController::class, 'index'])->name('home.show');
+    
+});
 
-
-Route::get('/shop', function () {
-    return view('pages/shop');
-})->name('shop.show');
-
-Route::get('/shop/product/{productId}', function () {
-    return view('pages/product-detail');
-})->name('product.show');
-
-//Route::get('/shop/product/{id}', ProductDetail::class)->name('product.show');
-
-Route::get('/cart', function () {
-    return view('pages/cart');
-})->name('cart.show');
-
-//Route::get('/test', [TestController::class, 'index']);
-/*Route::get('/cart', function () {
-    return view('cart');
-})->name('cart');*/
-
-//Route::get('/test', [TestController::class, 'index']);
-Route::get('/test', function () {
-    return view('pages/test');
-})->name('test');
-
-Route::get('/', [HomeController::class, 'index']);
 

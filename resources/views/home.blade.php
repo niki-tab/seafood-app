@@ -1,13 +1,4 @@
 @extends('layouts.app')
-<?php
-seo()
-->title(env('APP_NAME'), 'Tu plataforma para comprar pescado y marisco online')
-->description('Encuentra pescados y mariscos frescos con nuestra aplicación. Del mar a tu casa en menos de 24 horas.')
-->images(
-    'https://mywebsite.com/images/blog-1/cover-image.webp',
-    'https://mywebsite.com/images/blog-1/another-image.webp',
-);
-?>
 @metadata
 @section('content')
 <!-- Hero Section -->
@@ -43,7 +34,7 @@ seo()
                     <h3 class="text-xl font-semibold mb-2">{{ $product->name }}</h3>
                     <p class="text-gray-600 mb-4">{{ $product->description }}</p>
                     <span class="text-lg font-bold">{{ $product->price }}</span>
-                    <a href="{{ route('product.show', $product->id) }}" class="block mt-4 bg-sky-700 text-white py-2 px-4 rounded-lg text-center hover:bg-sky-600">{{ trans('pages/home.view_product') }}</a>
+                    <a href="{{ route('product.show', ['locale' => app()->getLocale(), 'productId' => $product->id]) }}" class="block mt-4 bg-sky-700 text-white py-2 px-4 rounded-lg text-center hover:bg-sky-600">{{ trans('pages/home.view_product') }}</a>
                 </div>
             </div>
             @endforeach

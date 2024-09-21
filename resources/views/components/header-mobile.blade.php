@@ -2,7 +2,7 @@
     <div class="flex justify-between items-center"> 
         <!-- Logo (on the left) -->
         <div class="text-left mt-2 p-4">
-            <a href="/" class="">
+            <a href="/{{app()->getLocale()}}" class="">
                 <img src="{{ asset('images/logo/logo_centollo_01.png') }}" alt="logo" width="200" height="78">
             </a>
         </div>
@@ -18,13 +18,12 @@
 
     <!-- Hidden Menu (Will be shown when clicking the hamburger) -->
     <div id="mobileMenu" class="hidden space-y-4 text-center bg-sky-700 w-full py-4">
-        <a href="/" class="{{ request()->is('/') ? 'font-bold text-yellow-300' : 'text-white' }} block text-white text-lg hover:underline pb-2">{{ trans('components/header.menu-option-1') }}</a>
-        <a href="/shop" class="{{ request()->is('shop') ? 'font-bold text-yellow-300' : 'text-white' }} block text-white text-lg hover:underline pb-2">{{ trans('components/header.menu-option-2') }}</a>
-        <a href="/cart" class="{{ request()->is('cart') ? 'font-bold text-yellow-300' : 'text-white' }} block text-white text-lg hover:underline pb-2">{{ trans('components/header.menu-option-3') }}</a>
-        <a href="/contact" class="{{ request()->is('contact') ? 'font-bold text-yellow-300' : 'text-white' }} block text-white text-lg hover:underline pb-2">{{ trans('components/header.menu-option-4') }}</a>
+        <a href="/" class="{{ request()->routeIs('home.show') ? 'font-bold text-yellow-300' : 'text-white' }} block text-white text-lg hover:underline pb-2">{{ trans('components/header.menu-option-1') }}</a>
+        <a href="/shop" class="{{ request()->routeIs('shop.show') ? 'font-bold text-yellow-300' : 'text-white' }} block text-white text-lg hover:underline pb-2">{{ trans('components/header.menu-option-2') }}</a>
+        <a href="/cart" class="{{ request()->routeIs('cart.show') ? 'font-bold text-yellow-300' : 'text-white' }} block text-white text-lg hover:underline pb-2">{{ trans('components/header.menu-option-3') }}</a>
+        <a href="/contact" class="{{ request()->routeIs('contact.send') ? 'font-bold text-yellow-300' : 'text-white' }} block text-white text-lg hover:underline pb-2">{{ trans('components/header.menu-option-4') }}</a>
     </div>
 </div>
-
 <script>
     // JavaScript to toggle the menu
     document.getElementById('hamburgerMenu').addEventListener('click', function() {
