@@ -22,7 +22,7 @@ class SetLocale
         if (in_array($locale, ['en', 'es'])) {
             App::setLocale($locale);
         } else {
-            $locale = 'en';
+            $locale = 'es';
             return redirect("/$locale" . $request->getRequestUri());
         }
 
