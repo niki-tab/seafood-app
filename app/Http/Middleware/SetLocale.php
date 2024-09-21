@@ -25,7 +25,7 @@ class SetLocale
             $locale = 'es';
             return redirect("/$locale" . $request->getRequestUri());
         }
-
+        App::setLocale("es");
         return $next($request);
 
     }

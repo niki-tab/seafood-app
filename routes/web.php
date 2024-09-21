@@ -24,7 +24,7 @@ use App\Http\Controllers\TestController;
     return view('welcome');
 });*/
 
-Route::group(['prefix' => '{locale}', 'middleware' => 'set.user.language'], function () {
+Route::group(['prefix' => '{locale}', 'middleware' => 'set.locale'], function () {
     
     Route::get('/shop', function () {
         return view('pages/shop');
@@ -39,6 +39,10 @@ Route::group(['prefix' => '{locale}', 'middleware' => 'set.user.language'], func
     Route::get('/cart', function () {
         return view('pages/cart');
     })->name('cart.show');
+
+    Route::get('/contact', function () {
+        return view('pages/contact');
+    })->name('contact.send');
     
     //Route::get('/test', [TestController::class, 'index']);
     /*Route::get('/cart', function () {

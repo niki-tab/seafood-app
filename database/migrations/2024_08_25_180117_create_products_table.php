@@ -15,6 +15,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('name');
             $table->string('description')->nullable();
+            $table->string('origin');
             $table->string('product_type')->nullable();
             $table->string('product_species_type')->nullable();
             $table->float('price');
