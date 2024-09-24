@@ -9,9 +9,14 @@ class ProductDetail extends Component
 {
     public $product;
 
-    public function mount($productId)
-    {
-        $this->product = ProductModel::findOrFail($productId);
+    public $lang;
+
+    public function mount($productSlug)
+    {   
+        $this->lang = app()->getLocale();
+
+        $this->product = ProductModel::where("slug->".$this->lang, $productSlug)->first();
+        
     }
 
     public function render()

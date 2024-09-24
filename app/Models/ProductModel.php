@@ -5,9 +5,10 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+use Spatie\Translatable\HasTranslations;
 class ProductModel extends Model
 {
-    use HasFactory;
+    use HasFactory, HasTranslations;
 
     protected $table = 'products';
     public $incrementing = false;
@@ -15,6 +16,7 @@ class ProductModel extends Model
     protected $fillable = [
         'id',
         'name',
+        'slug',
         'description',
         'origin' => 'string',
         'product_type',
@@ -23,6 +25,7 @@ class ProductModel extends Model
         'sell_unit',
         'stock',
         'stock_unit',
+        'out_of_stock',
         'image',
         'featured',
     ];
@@ -32,6 +35,7 @@ class ProductModel extends Model
     protected $casts = [
         'id' => 'string',
         'name' => 'string',
+        'slug' => 'string',
         'description' => 'string',
         'origin' => 'string',
         'product_type' => 'string',
@@ -40,7 +44,10 @@ class ProductModel extends Model
         'sell_unit' => 'string',
         'stock' => 'string',
         'stock_unit' => 'string',
+        'out_of_stock' => 'boolean',
         'image' => 'string',
         'featured' => 'boolean',
     ];
+
+    public $translatable = ['name', 'description', 'slug'];
 }

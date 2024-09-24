@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('name');
+            $table->string('slug')->unique();
             $table->string('description')->nullable();
             $table->string('origin');
             $table->string('product_type')->nullable();
@@ -22,6 +23,7 @@ return new class extends Migration
             $table->string('sell_unit');
             $table->string('stock');
             $table->string('stock_unit');
+            $table->boolean('out_of_stock');
             $table->string('image')->nullable();
             $table->boolean('featured')->default(false);
             $table->timestamps();

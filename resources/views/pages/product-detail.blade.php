@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-        @livewire('product-detail', ['productId' => request()->route('productId')])
+        @livewire('product-detail', ['productSlug' => request()->route('productSlug')])
 @endsection

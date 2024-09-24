@@ -30,9 +30,14 @@ Route::group(['prefix' => '{locale}', 'middleware' => 'set.locale'], function ()
         return view('pages/shop');
     })->name('shop.show');
     
-    Route::get('/shop/product/{productId}', function () {
+    Route::get('/shop/producto/{productSlug}', function () {
         return view('pages/product-detail');
-    })->name('product.show');
+    })->name('product.show.es')->where('locale', 'es');
+
+    Route::get('/shop/product/{productSlug}', function () {
+        return view('pages/product-detail');
+    })->name('product.show.en')->where('locale', 'en');
+
     
     //Route::get('/shop/product/{id}', ProductDetail::class)->name('product.show');
     

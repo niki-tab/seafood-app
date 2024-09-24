@@ -8,8 +8,11 @@ return [
     'about_description_1' => 'Nos comprometemos a llevar los mejores mariscos del océano directamente a tu casa, restaurante o mercado. Con un enfoque en frescura y fiabilidad, gracias a nuestra innovadora logística, traemos producto nacional e internacional de alta calidad en menos de 24 horas.',
     'about_description_2' => '¡Disfruta del sabor del mar, siempre fresco y a tu alcance!',
     'contact_us' => 'Contáctanos',
-    'featured_products' => 'Mariscos y Productos Destacados',
+    'featured_products' => 'Mariscos y Pescados Destacados',
     'view_product' => 'Ver Producto',
     'label-product-origin' => 'Origen:',
     'label-product-fresh-stock' => 'Stock fresco:',
+    'label-product-price-from' => 'Desde:',
+    'label-product-stock-available' => 'Hay existencias',
+    'label-product-no-stock-available' => 'No hay existencias',
 ];
