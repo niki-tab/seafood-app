@@ -19,9 +19,9 @@
     <!-- Hidden Menu (Will be shown when clicking the hamburger) -->
     <div id="mobileMenu" class="hidden space-y-4 text-center bg-sky-700 w-full py-4">
         <a href="{{ route('home.show', ['locale' => app()->getLocale()]) }}" class="{{ request()->routeIs('home.show') ? 'font-bold text-yellow-300' : 'text-white' }} block text-white text-lg hover:underline pb-2">{{ trans('components/header.menu-option-1') }}</a>
-        <a href="{{ route('shop.show', ['locale' => app()->getLocale()]) }}" class="{{ request()->routeIs('shop.show') ? 'font-bold text-yellow-300' : 'text-white' }} block text-white text-lg hover:underline pb-2">{{ trans('components/header.menu-option-2') }}</a>
-        <a href="{{ route('cart.show', ['locale' => app()->getLocale()]) }}" class="{{ request()->routeIs('cart.show') ? 'font-bold text-yellow-300' : 'text-white' }} block text-white text-lg hover:underline pb-2">{{ trans('components/header.menu-option-3') }}</a>
-        <a href="{{ route('contact.send', ['locale' => app()->getLocale()]) }}" class="{{ request()->routeIs('contact.send') ? 'font-bold text-yellow-300' : 'text-white' }} block text-white text-lg hover:underline pb-2">{{ trans('components/header.menu-option-4') }}</a>
+        <a href="{{ route(app()->getLocale() === 'es' ? 'shop.show.es' : 'shop.show.en', ['locale' => app()->getLocale()]) }}" class="{{ request()->routeIs('shop.show.es') || request()->routeIs('cart.show.en') ? 'font-bold text-yellow-300' : 'text-white' }} block text-white text-lg hover:underline pb-2">{{ trans('components/header.menu-option-2') }}</a>
+        <a href="{{ route(app()->getLocale() === 'es' ? 'cart.show.es' : 'cart.show.en', ['locale' => app()->getLocale()]) }}" class="{{ request()->routeIs('cart.show.es') || request()->routeIs('cart.show.en') ? 'font-bold text-yellow-300' : 'text-white' }} block text-white text-lg hover:underline pb-2">{{ trans('components/header.menu-option-3') }}</a>
+        <a href="{{ route(app()->getLocale() === 'es' ? 'contact.send.es' : 'contact.send.en', ['locale' => app()->getLocale()]) }}" class="{{ request()->routeIs('contact.send.es') || request()->routeIs('contact.send.en') ? 'font-bold text-yellow-300' : 'text-white' }} block text-white text-lg hover:underline pb-2">{{ trans('components/header.menu-option-4') }}</a>
     </div>
 </div>
 <script>

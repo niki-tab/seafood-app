@@ -26,11 +26,18 @@ use App\Http\Controllers\TestController;
 
 Route::group(['prefix' => '{locale}', 'middleware' => 'set.locale'], function () {
     
+    /*Route::get('/shop', function () {
+        return view('pages/shop');
+    })->name('shop.show');*/
+    Route::get('/tienda', function () {
+        return view('pages/shop');
+    })->name('shop.show.es')->where('locale', 'es');
+
     Route::get('/shop', function () {
         return view('pages/shop');
-    })->name('shop.show');
-    
-    Route::get('/shop/producto/{productSlug}', function () {
+    })->name('shop.show.en')->where('locale', 'en');
+
+    Route::get('/tienda/producto/{productSlug}', function () {
         return view('pages/product-detail');
     })->name('product.show.es')->where('locale', 'es');
 
@@ -38,23 +45,23 @@ Route::group(['prefix' => '{locale}', 'middleware' => 'set.locale'], function ()
         return view('pages/product-detail');
     })->name('product.show.en')->where('locale', 'en');
 
-    
-    //Route::get('/shop/product/{id}', ProductDetail::class)->name('product.show');
-    
+    Route::get('/carrito', function () {
+        return view('pages/cart');
+    })->name('cart.show.es')->where('locale', 'es');
+
     Route::get('/cart', function () {
         return view('pages/cart');
-    })->name('cart.show');
+    })->name('cart.show.en')->where('locale', 'en');
+
+    Route::get('/contacto', function () {
+        return view('pages/contact');
+    })->name('contact.send.es')->where('locale', 'es');
 
     Route::get('/contact', function () {
         return view('pages/contact');
-    })->name('contact.send');
-    
-    //Route::get('/test', [TestController::class, 'index']);
-    /*Route::get('/cart', function () {
-        return view('cart');
-    })->name('cart');*/
-    
-    //Route::get('/test', [TestController::class, 'index']);
+    })->name('contact.send.en')->where('locale', 'en');
+
+
     Route::get('/test', function () {
         return view('pages/test');
     })->name('test');

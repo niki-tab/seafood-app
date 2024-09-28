@@ -1,5 +1,5 @@
 <div class="container mx-auto px-4 py-8">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
         <!-- Product Image -->
         <div>
             <img src="{{ asset($product->image) }}" alt="{{ $product->name }}" class="w-full h-auto object-cover rounded-lg shadow-lg">
@@ -30,4 +30,5 @@
             </div>
         </div>
     </div>
+    @livewire('product-information-tab')
 </div>
