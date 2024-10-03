@@ -14,8 +14,12 @@ class RedirectIfNoLocale
      * @param  \Closure(\Illuminate\Http\Request): (\Symfony\Component\HttpFoundation\Response)  $next
      */
     public function handle(Request $request, Closure $next)
-    {
-        $locale = $request->segment(1); // Get the first segment of the URL
+    {   
+        if ($request->is('livewire/*')) {
+            return $next($request); // Skip the language prefix for Livewire routes
+        }
+
+        $locale = $request->segment(1); 
 
         // Check if the first segment is a valid locale ('en' or 'es')
         if (!in_array($locale, ['en', 'es'])) {

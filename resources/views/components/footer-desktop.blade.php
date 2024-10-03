@@ -1,4 +1,4 @@
-<div class="hidden md:grid bg-sky-700 text-white p-4 mt-4">
+<div class="hidden md:grid bg-button-color-1 text-white p-4 mt-4">
     <div class="container mx-auto text-center">
         <div class="grid grid-cols-10 gap-4 mt-8 mb-8"> 
             <!-- Column 1 -->

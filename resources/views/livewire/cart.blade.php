@@ -12,7 +12,7 @@
                         
                         <div class="flex items-center justify-between">
                             <span class="text-lg font-bold text-gray-900">{{ trans('components/cart.price') }} ${{ number_format($item['price'], 2) }}</span>
-                            <button wire:click="removeItem('{{ $item['id'] }}')" class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
+                            <button wire:click="removeItem('{{ $item['id'] }}')" class="bg-red-700 text-white px-4 py-2 rounded hover:bg-red-600">
                                 {{ trans('components/cart.remove') }}
                             </button>
                         </div>
@@ -23,7 +23,7 @@
 
         <div class="mt-8 text-right">
             <h2 class="text-2xl font-bold text-gray-800 mb-4">{{ trans('components/cart.total') }} ${{ number_format($totalPrice, 2) }}</h2>
-            <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">{{ trans('components/cart.checkout') }}</button>
+            <button class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-600">{{ trans('components/cart.checkout') }}</button>
         </div>
     @else
         <p class="text-gray-600">{{ trans('components/cart.empty') }}</p>

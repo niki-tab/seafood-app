@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'hero_title' => 'Mariscos y pescados frescos, directo del océano a tu mesa en menos de 24 horas',
+    'hero_title' => 'Marisco y pescado frescos, directo del océano a tu mesa en menos de 24 horas',
     'hero_subtitle' => 'Directamente del mar a tu puerta en su máximo de frescura: centollos, ostras, vieiras, y mucho más.',
     'shop_now' => 'Compra Ahora',
     'about_title' => 'Sobre Nosotros',

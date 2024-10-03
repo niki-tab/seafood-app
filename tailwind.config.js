@@ -8,7 +8,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        'sky-700': '#0284c7', // If you need to override or customize
+        'button-color-1': '#0284c7', // If you need to override or customize
+        'main-theme-color': '#091235',
+        'secondary-theme-color-2': '#D6AD60',
+        'button-color-1': '#091235',
+        'button-color-1-hover': '#D6AD60',
+        //'button-color-1': '#091235',
       },
       fontFamily: {
         serif: ['Merriweather', 'serif'],

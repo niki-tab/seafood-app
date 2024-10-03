@@ -15,12 +15,15 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('name');
             $table->string('slug')->unique();
-            $table->string('description')->nullable();
-            $table->string('origin');
+            $table->string('description_1')->nullable();
+            $table->longText('description_2')->nullable();
+            $table->string('origin_general');
+            $table->string('origin_specific');
             $table->string('product_type')->nullable();
             $table->string('product_species_type')->nullable();
-            $table->float('price');
+            $table->float('price_from');
             $table->string('sell_unit');
+            $table->string('sell_mode');
             $table->string('stock');
             $table->string('stock_unit');
             $table->boolean('out_of_stock');

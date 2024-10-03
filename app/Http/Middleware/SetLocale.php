@@ -16,7 +16,10 @@ class SetLocale
      */
     public function handle(Request $request, Closure $next): Response
     {   
-
+        if ($request->is('livewire/*')) {
+            return $next($request); // Skip the language prefix for Livewire routes
+        }
+        
         $locale = $request->segment(1);
 
         if (in_array($locale, ['en', 'es'])) {

@@ -1,4 +1,4 @@
-<div class="md:hidden bg-sky-700 text-white h-28 fixed top-0 w-full">
+<div class="md:hidden bg-button-color-1 text-white h-28 fixed top-0 w-full">
     <div class="flex justify-between items-center"> 
         <!-- Logo (on the left) -->
         <div class="text-left mt-2 p-4">
@@ -17,11 +17,11 @@
     </div>
 
     <!-- Hidden Menu (Will be shown when clicking the hamburger) -->
-    <div id="mobileMenu" class="hidden space-y-4 text-center bg-sky-700 w-full py-4">
-        <a href="{{ route('home.show', ['locale' => app()->getLocale()]) }}" class="{{ request()->routeIs('home.show') ? 'font-bold text-yellow-300' : 'text-white' }} block text-white text-lg hover:underline pb-2">{{ trans('components/header.menu-option-1') }}</a>
-        <a href="{{ route(app()->getLocale() === 'es' ? 'shop.show.es' : 'shop.show.en', ['locale' => app()->getLocale()]) }}" class="{{ request()->routeIs('shop.show.es') || request()->routeIs('cart.show.en') ? 'font-bold text-yellow-300' : 'text-white' }} block text-white text-lg hover:underline pb-2">{{ trans('components/header.menu-option-2') }}</a>
-        <a href="{{ route(app()->getLocale() === 'es' ? 'cart.show.es' : 'cart.show.en', ['locale' => app()->getLocale()]) }}" class="{{ request()->routeIs('cart.show.es') || request()->routeIs('cart.show.en') ? 'font-bold text-yellow-300' : 'text-white' }} block text-white text-lg hover:underline pb-2">{{ trans('components/header.menu-option-3') }}</a>
-        <a href="{{ route(app()->getLocale() === 'es' ? 'contact.send.es' : 'contact.send.en', ['locale' => app()->getLocale()]) }}" class="{{ request()->routeIs('contact.send.es') || request()->routeIs('contact.send.en') ? 'font-bold text-yellow-300' : 'text-white' }} block text-white text-lg hover:underline pb-2">{{ trans('components/header.menu-option-4') }}</a>
+    <div id="mobileMenu" class="hidden space-y-4 text-center bg-button-color-1 w-full py-4">
+        <a href="{{ route('home.show', ['locale' => app()->getLocale()]) }}" class="{{ request()->routeIs('home.show') ? 'font-bold text-button-color-1-hover' : 'text-white' }} block text-white text-lg hover:underline pb-2">{{ trans('components/header.menu-option-1') }}</a>
+        <a href="{{ route(app()->getLocale() === 'es' ? 'shop.show.es' : 'shop.show.en', ['locale' => app()->getLocale()]) }}" class="{{ request()->routeIs('shop.show.es') || request()->routeIs('cart.show.en') ? 'font-bold text-button-color-1-hover' : 'text-white' }} block text-white text-lg hover:underline pb-2">{{ trans('components/header.menu-option-2') }}</a>
+        <a href="{{ route(app()->getLocale() === 'es' ? 'cart.show.es' : 'cart.show.en', ['locale' => app()->getLocale()]) }}" class="{{ request()->routeIs('cart.show.es') || request()->routeIs('cart.show.en') ? 'font-bold text-button-color-1-hover' : 'text-white' }} block text-white text-lg hover:underline pb-2">{{ trans('components/header.menu-option-3') }}</a>
+        <a href="{{ route(app()->getLocale() === 'es' ? 'contact.send.es' : 'contact.send.en', ['locale' => app()->getLocale()]) }}" class="{{ request()->routeIs('contact.send.es') || request()->routeIs('contact.send.en') ? 'font-bold text-button-color-1-hover' : 'text-white' }} block text-white text-lg hover:underline pb-2">{{ trans('components/header.menu-option-4') }}</a>
     </div>
 </div>
 <script>

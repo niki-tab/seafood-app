@@ -12,6 +12,7 @@
     @livewireStyles
 </head>
 <body class="min-h-screen flex flex-col">
+    @livewireScripts
     <header class="z-10">
         <x-header-desktop/>
         <x-header-mobile/>
@@ -21,10 +22,9 @@
         @yield('content')
     </main>
 
-    <footer>
+    <footer class="mt-12">
         <x-footer-desktop />
         <x-footer-mobile />
     </footer>
-    @livewireScripts
 </body>
 </html>

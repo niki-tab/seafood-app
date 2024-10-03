@@ -4,21 +4,21 @@
             <li class="w-1/3 pt-4">
                 <a href="#" wire:click.prevent="setTab('precio')"
                    class="inline-block px-4 py-2 font-semibold rounded-lg 
-                   {{ $activeTab === 'precio' ? 'bg-white text-blue-500' : 'text-gray-500 hover:text-white hover:bg-blue-500' }}">
+                   {{ $activeTab === 'precio' ? 'text-button-color-1' : 'text-gray-500 hover:font-bold hover:text-white hover:bg-button-color-1' }}">
                     Precio
                 </a>
             </li>
             <li class="w-1/3 pt-4">
                 <a href="#" wire:click.prevent="setTab('recetas')"
                    class="inline-block px-4 py-2 font-semibold rounded-lg 
-                   {{ $activeTab === 'recetas' ? 'bg-white text-blue-500' : 'text-gray-500 hover:text-white hover:bg-blue-500' }}">
+                   {{ $activeTab === 'recetas' ? 'text-button-color-1' : 'text-gray-500 hover:font-bold hover:text-white hover:bg-button-color-1' }}">
                     Recetas
                 </a>
             </li>
             <li class="w-1/3 pt-4">
                 <a href="#" wire:click.prevent="setTab('propiedades')"
                    class="inline-block px-4 py-2 font-semibold rounded-lg 
-                   {{ $activeTab === 'propiedades' ? 'bg-white text-blue-500' : 'text-gray-500 hover:text-white hover:bg-blue-500' }}">
+                   {{ $activeTab === 'propiedades' ? 'text-button-color-1' : 'text-gray-500 hover:font-bold hover:text-white hover:bg-button-color-1' }}">
                     Propiedades
                 </a>
             </li>
@@ -35,3 +35,4 @@
     </div>
     
 </div>
+
