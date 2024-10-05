@@ -10,9 +10,10 @@ export default {
       colors: {
         'button-color-1': '#0284c7', // If you need to override or customize
         'main-theme-color': '#091235',
-        'secondary-theme-color-2': '#D6AD60',
+        'secondary-theme-color-2': '#FFDE21',
         'button-color-1': '#091235',
-        'button-color-1-hover': '#D6AD60',
+        'button-color-1-hover': '#FFDE21',
+        'text-color-1-hover': '#FFDE21',
         //'button-color-1': '#091235',
       },
       fontFamily: {

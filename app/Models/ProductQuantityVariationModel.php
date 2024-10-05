@@ -6,12 +6,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 use Spatie\Translatable\HasTranslations;
-class ProductSizeVariationModel extends Model
+class ProductQuantityVariationModel extends Model
 {
 
     use HasFactory, HasTranslations;
 
-    protected $table = 'product_size_variations';
+    protected $table = 'product_quantity_variations';
 
     public $incrementing = false;
 
@@ -20,8 +20,8 @@ class ProductSizeVariationModel extends Model
     protected $fillable = [
         'id',
         'product_id',
-        'size_name',
-        'size_description',
+        'quantity_name',
+        'quantity_description',
         'order',
     ];
 
@@ -30,16 +30,15 @@ class ProductSizeVariationModel extends Model
     protected $casts = [
         'id' => 'string',
         'product_id' => 'string',
-        'size_name' => 'string',
-        'size_description' => 'string',
+        'quantity_name' => 'string',
+        'quantity_description' => 'string',
         'order' => 'integer',
     ];
 
-    public $translatable = ['size_name', 'size_description'];
+    public $translatable = ['quantity_name', 'quantity_description'];
 
-    public function producQuantityVariations()
+    public function producSizeVariations()
     {
-        return $this->belongsToMany(ProductQuantityVariationModel::class, "product_size_variation_quantity_variation_prices", "product_size_variation_id", "product_quantity_variation_id");
+        return $this->belongsToMany(ProductSizeVariationModel::class, "product_size_variation_quantity_variation_prices", "product_quantity_variation_id", "product_size_variation_id");
     }
-
 }

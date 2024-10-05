@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('product_quantity_variations', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->uuid('product_id');
-            $table->uuid('product_size_variation_id');
             $table->string('quantity_name');
             $table->string('quantity_description');
             $table->integer('order');

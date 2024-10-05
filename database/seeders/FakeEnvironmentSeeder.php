@@ -6,7 +6,9 @@ use Illuminate\Support\Str;
 use App\Models\ProductModel;
 use Illuminate\Database\Seeder;
 use App\Models\ProductSizeVariationModel;
+use App\Models\ProductQuantityVariationModel;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\ProducSizeVariationQuantityVariationPriceModel;
 
 class FakeEnvironmentSeeder extends Seeder
 {
@@ -108,13 +110,145 @@ class FakeEnvironmentSeeder extends Seeder
             'product_id' => $oisters->id,
             'size_name' => "Talla 3",
             'size_description' => "Talla 3",
-            'order' => 2,
+            'order' => 3,
         ]);
         
         $oisterProductSizeVariation3
         ->setTranslation('size_name', 'en', 'Size 3')
         ->setTranslation('size_description', 'en', 'Size 3')
         ->save();
+        
+
+
+        $oisterProductQuantityVariationModel1 = ProductQuantityVariationModel::create([
+            'id' => (string) Str::uuid(),
+            'product_id' => $oisters->id,
+            'quantity_name' => "Caja 12 unidades",
+            'quantity_description' => "Caja 12 unidades",
+            'order' => 1,
+        ]);
+        
+        $oisterProductQuantityVariationModel1
+        ->setTranslation('quantity_name', 'en', 'Box 12 units')
+        ->setTranslation('quantity_description', 'en', 'Box 12 units')
+        ->save();
+
+        $oisterProductQuantityVariationModel2 = ProductQuantityVariationModel::create([
+            'id' => (string) Str::uuid(),
+            'product_id' => $oisters->id,
+            'quantity_name' => "Caja 24 unidades",
+            'quantity_description' => "Caja 24 unidades",
+            'order' => 2,
+        ]);
+        
+        $oisterProductQuantityVariationModel2
+        ->setTranslation('quantity_name', 'en', 'Box 24 units')
+        ->setTranslation('quantity_description', 'en', 'Box 24 units')
+        ->save();
+
+        $oisterProductQuantityVariationModel3 = ProductQuantityVariationModel::create([
+            'id' => (string) Str::uuid(),
+            'product_id' => $oisters->id,
+            'quantity_name' => "Caja 36 unidades",
+            'quantity_description' => "Caja 36 unidades",
+            'order' => 3,
+        ]);
+        
+        $oisterProductQuantityVariationModel3
+        ->setTranslation('quantity_name', 'en', 'Box 36 units')
+        ->setTranslation('quantity_description', 'en', 'Box 36 units')
+        ->save();
+
+        $oisterVariationPrices1 = ProducSizeVariationQuantityVariationPriceModel::create([
+            'id' => (string) Str::uuid(),
+            'product_id' => $oisters->id,
+            'product_size_variation_id' => $oisterProductSizeVariation1->id,
+            'product_quantity_variation_id' => $oisterProductQuantityVariationModel1->id,
+            'sale_price' => 15.6,
+            'discounted_price' => null,
+            'currency' => "€",
+        ]);
+
+        $oisterVariationPrices2 = ProducSizeVariationQuantityVariationPriceModel::create([
+            'id' => (string) Str::uuid(),
+            'product_id' => $oisters->id,
+            'product_size_variation_id' => $oisterProductSizeVariation1->id,
+            'product_quantity_variation_id' => $oisterProductQuantityVariationModel2->id,
+            'sale_price' => 31.2,
+            'discounted_price' => null,
+            'currency' => "€",
+        ]);
+
+        $oisterVariationPrices3 = ProducSizeVariationQuantityVariationPriceModel::create([
+            'id' => (string) Str::uuid(),
+            'product_id' => $oisters->id,
+            'product_size_variation_id' => $oisterProductSizeVariation1->id,
+            'product_quantity_variation_id' => $oisterProductQuantityVariationModel3->id,
+            'sale_price' => 46.8,
+            'discounted_price' => null,
+            'currency' => "€",
+        ]);
+
+        $oisterVariationPrices4 = ProducSizeVariationQuantityVariationPriceModel::create([
+            'id' => (string) Str::uuid(),
+            'product_id' => $oisters->id,
+            'product_size_variation_id' => $oisterProductSizeVariation2->id,
+            'product_quantity_variation_id' => $oisterProductQuantityVariationModel1->id,
+            'sale_price' => 15.6,
+            'discounted_price' => null,
+            'currency' => "€",
+        ]);
+
+        $oisterVariationPrices5 = ProducSizeVariationQuantityVariationPriceModel::create([
+            'id' => (string) Str::uuid(),
+            'product_id' => $oisters->id,
+            'product_size_variation_id' => $oisterProductSizeVariation2->id,
+            'product_quantity_variation_id' => $oisterProductQuantityVariationModel2->id,
+            'sale_price' => 31.2,
+            'discounted_price' => null,
+            'currency' => "€",
+        ]);
+
+        $oisterVariationPrices6 = ProducSizeVariationQuantityVariationPriceModel::create([
+            'id' => (string) Str::uuid(),
+            'product_id' => $oisters->id,
+            'product_size_variation_id' => $oisterProductSizeVariation2->id,
+            'product_quantity_variation_id' => $oisterProductQuantityVariationModel3->id,
+            'sale_price' => 46.8,
+            'discounted_price' => null,
+            'currency' => "€",
+        ]);
+
+        $oisterVariationPrices7 = ProducSizeVariationQuantityVariationPriceModel::create([
+            'id' => (string) Str::uuid(),
+            'product_id' => $oisters->id,
+            'product_size_variation_id' => $oisterProductSizeVariation3->id,
+            'product_quantity_variation_id' => $oisterProductQuantityVariationModel1->id,
+            'sale_price' => 15.6,
+            'discounted_price' => null,
+            'currency' => "€",
+        ]);
+
+        $oisterVariationPrices8 = ProducSizeVariationQuantityVariationPriceModel::create([
+            'id' => (string) Str::uuid(),
+            'product_id' => $oisters->id,
+            'product_size_variation_id' => $oisterProductSizeVariation3->id,
+            'product_quantity_variation_id' => $oisterProductQuantityVariationModel2->id,
+            'sale_price' => 31.2,
+            'discounted_price' => null,
+            'currency' => "€",
+        ]);
+
+        $oisterVariationPrices9 = ProducSizeVariationQuantityVariationPriceModel::create([
+            'id' => (string) Str::uuid(),
+            'product_id' => $oisters->id,
+            'product_size_variation_id' => $oisterProductSizeVariation3->id,
+            'product_quantity_variation_id' => $oisterProductQuantityVariationModel3->id,
+            'sale_price' => 46.8,
+            'discounted_price' => null,
+            'currency' => "€",
+        ]);
+
 
         $grouper = ProductModel::create([
 

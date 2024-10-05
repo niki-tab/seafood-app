@@ -13,7 +13,7 @@
                 <p class="text-gray-600 mt-4">{{ $product->description_1 }}</p>
 
                 <div class="text-lg font-semibold text-gray-800 mt-6">
-                {{ trans('pages/product-detail.label-price') }}: ${{ number_format($product->price, 2) }}
+                {{ trans('pages/product-detail.label-price') }}: {{ number_format($specificPrice, 2) }}€
                 </div>
             </div>
 
@@ -25,20 +25,34 @@
                     @if(!empty($productSizeVariations) && count($productSizeVariations) > 0)
                         <div class="flex flex-col">
                             <label for="size" class="text-gray-700">{{ trans('pages/product-detail.label-select-product-size') }}:</label>
-                            <select id="size" wire:model="selectedSize" class="border border-gray-300 rounded-lg px-4 py-2 w-48">
-                                @foreach($productSizeVariations as $variation)
-                                    <option value="{{ $variation->size_name }}">{{ $variation->size_name }}</option>
+                            <select id="size"  wire:change="updateSelectedSize($event.target.value)" wire:model="selectedSize" class="border border-gray-300 rounded-lg px-4 py-2 w-48">
+                                @foreach($productSizeVariations->sortBy('order') as $Sizevariation)
+                                    <option value="{{ $Sizevariation->id }}">{{ $Sizevariation->size_name }}</option>
                                 @endforeach
                             </select>
                         </div>
                     @endif
-                    
-                    <!-- Quantity Input Field -->
-                    <div class="flex flex-col">
-                        <label for="quantity" class="text-gray-700">{{ trans('pages/product-detail.label-quantity') }}:</label>
-                        <input type="number" id="quantity" wire:model="quantity" class="border border-gray-300 rounded-lg px-4 py-2 w-24" min="1" value="1">
-                    </div>
-
+                    @if($selectedSize)
+                        <!-- Size Variations Select Field -->
+                        @if(!empty($productSizeVariations) && count($productSizeVariations) > 0)
+                        @php
+                            $selectedQuantity = $productSizeVariations->firstWhere('id', $selectedSize);
+                        @endphp
+                        <div class="flex flex-col mt-4">
+                            <label for="quantity" class="text-gray-700">{{ trans('pages/product-detail.label-select-product-quantity') }}:</label>
+                            <select id="quantity" wire:model="selectedQuantity" wire:change="updateSelectedQuanitity($event.target.value)" class="border border-gray-300 rounded-lg px-4 py-2 w-48">
+                                @foreach($selectedQuantity->producQuantityVariations->sortBy('order') as $quantityVariation)
+                                    <option value="{{ $quantityVariation->id }}">{{ $quantityVariation->quantity_name}}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        @else
+                            <div class="flex flex-col">
+                                <label for="quantity" class="text-gray-700">{{ trans('pages/product-detail.label-quantity') }}:</label>
+                                <input type="number" id="quantity" wire:model="quantity" class="border border-gray-300 rounded-lg px-4 py-2 w-24" min="1" value="1">
+                            </div>
+                        @endif
+                    @endif
                     <!-- Add to Cart Button -->
                     <div class="flex flex-col items-center">
                         <button wire:click="addToCart" class="bg-button-color-1 text-white px-6 py-3 rounded-lg hover:bg-sky-800 hover:text-button-color-1-hover">
