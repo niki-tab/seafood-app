@@ -2,7 +2,7 @@
 @metadata
 @section('content')
 <!-- Hero Section -->
-<section class="relative overflow-hidden px-16">
+<section class="relative overflow-hidden md:px-16">
     <div class="relative z-10 container mx-auto px-6 py-16 flex flex-col items-center text-center">
         <h1 class="text-4xl md:text-6xl font-bold mb-4">{{ trans('pages/home.hero_title') }}</h1>
         <h2 class="text-lg md:text-2xl mb-8 w-9/12">{{ trans('pages/home.hero_subtitle') }}</h2>
@@ -11,7 +11,7 @@
 </section>
 
 <!-- About Us Section -->
-<section class="py-16 bg-gray-100 px-36">
+<section class="py-16 bg-gray-100 md:px-36">
     <div class="container mx-auto px-6 text-center">
         <h1 class="text-3xl font-bold mb-4">{{ trans('pages/home.about_title') }}</h1>
         <h2 class="text-lg mb-8">{{ trans('pages/home.about_description_1') }}</h2>

@@ -1,12 +1,12 @@
 <div class="container mx-auto px-4 py-8">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-0 mb-20">
         <!-- Product Image -->
         <div class="">
             <img src="{{ asset($product->image) }}" alt="{{ $product->name }}" class="m-auto w-3/4 h-auto object-cover rounded-lg shadow-lg">
         </div>
 
         <!-- Product Information -->
-        <div class="flex flex-col justify-between">
+        <div class="flex flex-col justify-between px-4 md:px-0">
             <div>
                 <h1 class="text-4xl font-bold text-gray-800">{{ $product->name }}</h1>
 
