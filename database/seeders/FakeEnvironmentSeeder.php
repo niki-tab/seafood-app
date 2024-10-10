@@ -52,7 +52,7 @@ class FakeEnvironmentSeeder extends Seeder
 
             'id' => (string) Str::uuid(),
             'name' => "Ostras",
-            'description_1' => "Procedentes de Francia. Oceano Atlántico",
+            'description_1' => "Nuestras ostras frescas son cuidadosamente recolectadas por cultivadores apasionados, quienes mantienen viva la tradición de la recolección sostenible directamente del océano. Estas ostras se destacan por su sabor pronunciado, equilibrado con un toque salino que realza su textura suave y carnosa. La elección perfecta para los amantes del marisco. Disfruta de la frescura y autenticidad de estas joyas marinas, con entrega a domicilio en menos de 24 horas, garantizando su calidad y sabor en su mejor momento.",
             'description_2' => "La ostra francesa es un verdadero placer para los amantes del marisco, conocida por su delicado sabor y textura inconfundible. <br>En Rutas del Mar, contamos con las ostras de los mejores cultivadores franceses para que disfrutes de este manjar todo el año. Con su frescura incomparable, la ostra francesa se convierte en una opción excepcional para cualquier ocasión especial o para los paladares más exigentes.",
             'slug' => "ostras-bretaña",
             'origin_general' => "Francia",

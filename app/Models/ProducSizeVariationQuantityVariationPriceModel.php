@@ -41,4 +41,14 @@ class ProducSizeVariationQuantityVariationPriceModel extends Model
         'currency' => 'string',
     ];
 
+    public function productSize()
+    {
+        return $this->belongsTo(ProductSizeVariationModel::class, 'product_size_variation_id');
+    }
+
+    public function productQuantity()
+    {
+        return $this->belongsTo(ProductQuantityVariationModel::class, 'product_quantity_variation_id');
+    }
+
 }

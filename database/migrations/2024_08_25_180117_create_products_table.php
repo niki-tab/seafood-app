@@ -15,7 +15,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->string('name');
             $table->string('slug')->unique();
-            $table->string('description_1')->nullable();
+            $table->longText('description_1')->nullable();
             $table->longText('description_2')->nullable();
             $table->string('origin_general');
             $table->string('origin_specific');
