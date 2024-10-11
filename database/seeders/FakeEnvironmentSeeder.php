@@ -72,7 +72,7 @@ class FakeEnvironmentSeeder extends Seeder
 
         $oisters
         ->setTranslation('name', 'en', 'Oysters')
-        ->setTranslation('description_1', 'en', 'Sourced from France. Atlantic Ocean')
+        ->setTranslation('description_1', 'en', 'Our fresh oysters are carefully harvested by passionate cultivators who uphold the tradition of sustainable gathering directly from the ocean. These oysters stand out for their pronounced flavor, balanced with a salty touch that enhances their smooth and meaty texture. The perfect choice for seafood lovers. Enjoy the freshness and authenticity of these marine treasures, with home delivery in less than 24 hours, ensuring their quality and flavor at their best.')
         ->setTranslation('description_2', 'en', 'The French oyster is a true delight for seafood lovers, known for its delicate flavor and unmistakable texture. <br>At Rutas del Mar, we source oysters from the finest French farmers so you can enjoy this delicacy all year round. With its unparalleled freshness, the French oyster becomes an exceptional option for any special occasion or for the most discerning palates.')
         ->setTranslation('origin_general', 'en', 'France')
         ->setTranslation('origin_specific', 'en', 'Brittany')

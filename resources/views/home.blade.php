@@ -34,7 +34,7 @@
                     <p class="text-l text-black mb-2"><strong>{{ trans('pages/home.label-product-origin') }}  </strong>{{ $product->origin_general }}</p>
                     <span class="text-l text-black mb-4"><strong>{{ trans('pages/home.label-product-price-from') }} </strong>{{ $product->price }} €</span>
                     </div>
-                    @if($product->out_of_stock == true)
+                    @if($product->out_of_stock == false)
                         <p class="text-l text-white my-6 bg-green-600 rounded px-2 inline-block">{{ trans('pages/home.label-product-stock-available') }}</p>
                     @else
                         <p class="text-l text-white my-6 bg-red-700 rounded px-2 inline-block">{{ trans('pages/home.label-product-no-stock-available') }}</p>
