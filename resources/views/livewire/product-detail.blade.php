@@ -1,8 +1,8 @@
 <div class="container mx-auto px-4 py-8">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-0 mb-20">
         <!-- Product Image -->
-        <div class="flex flex-col items-center md:items-start justify-center md:pt-0">
-            <img src="{{ asset($product->image) }}" alt="{{ $product->name }}" class="mx-auto w-3/4 h-4/6 object-cover rounded-lg shadow-lg">
+        <div class="flex flex-col items-center md:items-start justify-center md:pt-0 md:mt-0 mt-8">
+            <img src="{{ asset($product->image) }}" alt="{{ $product->name }}" class="mx-auto md:w-3/4 4/5 h-4/6 object-cover rounded-lg shadow-lg">
 
             <!-- Carousel Below the Main Image -->
             <div class="w-3/4 max-w-3xl mt-8 mx-auto">
@@ -29,7 +29,7 @@
         </div>
 
         <!-- Product Information -->
-        <div class="flex flex-col justify-between px-12 md:px-0 mt-2 md:w-full w-full md:mx-0 mx-auto">
+        <div class="flex flex-col justify-between px-8 md:px-0 mt-2 md:w-full w-full md:mx-0 mx-auto">
             <div>
                 @if($product->out_of_stock == false)
                     <p class="text-l text-white my-6 bg-green-600 rounded px-2 inline-block">{{ trans('pages/home.label-product-stock-available') }}</p>
@@ -38,7 +38,7 @@
                 @endif
                 <h1 class="text-4xl font-bold text-gray-800">{{ $product->name }}</h1>
 
-                <p class="text-gray-600 mt-4 w-4/5">{{ $product->description_1 }}</p>
+                <p class="text-gray-600 mt-4 w-full">{{ $product->description_1 }}</p>
 
                 <div class="text-xl font-semibold text-gray-800 mt-6">
                 {{ trans('pages/product-detail.label-price') }}: {{ number_format($specificPrice, 2) }}€
@@ -62,7 +62,7 @@
                     @endif
                     @if($selectedSize)
                         <!-- Size Variations Select Field -->
-                        @if(!empty($productSizeVariations) && count($productSizeVariations) > 0)
+                        @if(!empty($test) && count($test) > 0)
                         <div class="flex flex-col mt-4">
                             <label for="quantity" class="text-gray-700 mb-4">{{ trans('pages/product-detail.label-select-product-quantity') }}:</label>
                             <select id="quantity" wire:model="selectedQuantity" wire:change="updateSelectedQuanitity($event.target.value)" class="border border-gray-300 rounded-lg px-4 py-2 w-full">

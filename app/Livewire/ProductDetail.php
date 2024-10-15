@@ -68,14 +68,22 @@ class ProductDetail extends Component
             ['id' => 3, 'quantity_name' => 'Large', 'order' => 3],
         ];*/
 
-        foreach ($producSizeVariationQuantityVariationPriceModel as $producSizeVariationQuantityVariationPriceModelIndividual){
-            
-            $this->test[] = [
-                'id' => $producSizeVariationQuantityVariationPriceModelIndividual->id,
-                'quantity_name' => $producSizeVariationQuantityVariationPriceModelIndividual->quantity_name, // Append a random number to the quantity name
-                'order' => $producSizeVariationQuantityVariationPriceModelIndividual->order, // Assuming the order corresponds to the ID
-            ];
+        $productQuantityVariationModel = ProductQuantityVariationModel::where("product_id", $productId)->first();
+        
+        if($productQuantityVariationModel){
 
+            foreach ($producSizeVariationQuantityVariationPriceModel as $producSizeVariationQuantityVariationPriceModelIndividual){
+                
+                $this->test[] = [
+                    'id' => $productQuantityVariationModel->id,
+                    'quantity_name' => $productQuantityVariationModel->quantity_name, // Append a random number to the quantity name
+                    'order' => $productQuantityVariationModel->order, // Assuming the order corresponds to the ID
+                ];
+
+            }
+
+        }else{
+            $this->test = null;
         }
         
     }
@@ -130,7 +138,7 @@ class ProductDetail extends Component
         if($producSizeVariationQuantityVariationPriceModel){
 
             $this->specificPrice = $producSizeVariationQuantityVariationPriceModel->sale_price;
-
+            $this->selectedQuantity = $producSizeVariationQuantityVariationPriceModel->product_quantity_variation_id;
         }
     }
 

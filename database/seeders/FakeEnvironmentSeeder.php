@@ -48,6 +48,75 @@ class FakeEnvironmentSeeder extends Seeder
         ->setTranslation('slug', 'en', 'spider-crab-brittany')
         ->save();
 
+        $spiderCrabProductSizeVariation1 = ProductSizeVariationModel::create([
+            'id' => (string) Str::uuid(),
+            'product_id' => $spiderCrab->id,
+            'size_name' => "Centolla Mediana (0,8-1kg/pieza)",
+            'size_description' => "Centolla Mediana (0.8-1kg/pieza)",
+            'order' => 1,
+        ]);
+        
+        $spiderCrabProductSizeVariation1
+        ->setTranslation('size_name', 'en', 'Medium Size Spider Crab (1-1,3kg/piece)')
+        ->setTranslation('size_description', 'en', 'Medium Size Spider Crab (1-1,3kg/piece)')
+        ->save();
+
+        $spiderCrabProductSizeVariation2 = ProductSizeVariationModel::create([
+            'id' => (string) Str::uuid(),
+            'product_id' => $spiderCrab->id,
+            'size_name' => "Centolla Grande (1-1,3kg/pieza)",
+            'size_description' => "Centolla Grande (1-1,3kg/pieza)",
+            'order' => 2,
+        ]);
+        
+        $spiderCrabProductSizeVariation2
+        ->setTranslation('size_name', 'en', 'Big Size Spider Crab (1-1,3kg/piece)')
+        ->setTranslation('size_description', 'en', 'Big Size Spider Crab (1-1,3kg/piece)')
+        ->save();
+
+        $spiderCrabProductSizeVariation3 = ProductSizeVariationModel::create([
+            'id' => (string) Str::uuid(),
+            'product_id' => $spiderCrab->id,
+            'size_name' => "Centolla XL (1,3-1,5kg/pieza)",
+            'size_description' => "Centolla XL (1,3-1,5kg/pieza)",
+            'order' => 3,
+        ]);
+        
+        $spiderCrabProductSizeVariation3
+        ->setTranslation('size_name', 'en', 'XL Spider Crab (1,3-1,5kg/piece)')
+        ->setTranslation('size_description', 'en', 'XL Spider Crab (1,3-1,5kg/piece)')
+        ->save();
+
+        $spiderCrabVariationPrices1 = ProducSizeVariationQuantityVariationPriceModel::create([
+            'id' => (string) Str::uuid(),
+            'product_id' => $spiderCrab->id,
+            'product_size_variation_id' => $spiderCrabProductSizeVariation1->id,
+            'product_quantity_variation_id' => null,
+            'sale_price' => 15.6,
+            'discounted_price' => null,
+            'currency' => "€",
+        ]);
+
+        $spiderCrabVariationPrices2 = ProducSizeVariationQuantityVariationPriceModel::create([
+            'id' => (string) Str::uuid(),
+            'product_id' => $spiderCrab->id,
+            'product_size_variation_id' => $spiderCrabProductSizeVariation2->id,
+            'product_quantity_variation_id' => null,
+            'sale_price' => 31.2,
+            'discounted_price' => null,
+            'currency' => "€",
+        ]);
+
+        $spiderCrabVariationPrices3 = ProducSizeVariationQuantityVariationPriceModel::create([
+            'id' => (string) Str::uuid(),
+            'product_id' => $spiderCrab->id,
+            'product_size_variation_id' => $spiderCrabProductSizeVariation3->id,
+            'product_quantity_variation_id' => null,
+            'sale_price' => 46.8,
+            'discounted_price' => null,
+            'currency' => "€",
+        ]);
+
         $oisters = ProductModel::create([
 
             'id' => (string) Str::uuid(),
