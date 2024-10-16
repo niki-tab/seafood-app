@@ -92,7 +92,7 @@ class FakeEnvironmentSeeder extends Seeder
             'product_id' => $spiderCrab->id,
             'product_size_variation_id' => $spiderCrabProductSizeVariation1->id,
             'product_quantity_variation_id' => null,
-            'sale_price' => 15.6,
+            'sale_price' => 23.90,
             'discounted_price' => null,
             'currency' => "€",
         ]);
@@ -102,7 +102,7 @@ class FakeEnvironmentSeeder extends Seeder
             'product_id' => $spiderCrab->id,
             'product_size_variation_id' => $spiderCrabProductSizeVariation2->id,
             'product_quantity_variation_id' => null,
-            'sale_price' => 31.2,
+            'sale_price' => 28.90,
             'discounted_price' => null,
             'currency' => "€",
         ]);
@@ -112,7 +112,7 @@ class FakeEnvironmentSeeder extends Seeder
             'product_id' => $spiderCrab->id,
             'product_size_variation_id' => $spiderCrabProductSizeVariation3->id,
             'product_quantity_variation_id' => null,
-            'sale_price' => 46.8,
+            'sale_price' => 33.90,
             'discounted_price' => null,
             'currency' => "€",
         ]);
@@ -121,8 +121,9 @@ class FakeEnvironmentSeeder extends Seeder
 
             'id' => (string) Str::uuid(),
             'name' => "Ostras",
-            'description_1' => "Nuestras ostras frescas son cuidadosamente recolectadas por cultivadores apasionados, quienes mantienen viva la tradición de la recolección sostenible directamente del océano. Estas ostras se destacan por su sabor pronunciado, equilibrado con un toque salino que realza su textura suave y carnosa. La elección perfecta para los amantes del marisco. Disfruta de la frescura y autenticidad de estas joyas marinas, con entrega a domicilio en menos de 24 horas, garantizando su calidad y sabor en su mejor momento.",
-            'description_2' => "La ostra francesa es un verdadero placer para los amantes del marisco, conocida por su delicado sabor y textura inconfundible. <br>En Rutas del Mar, contamos con las ostras de los mejores cultivadores franceses para que disfrutes de este manjar todo el año. Con su frescura incomparable, la ostra francesa se convierte en una opción excepcional para cualquier ocasión especial o para los paladares más exigentes.",
+            'description_1' => "Procedentes de Francia. Oceano Atlántico",
+            'description_2' => "Nuestras ostras frescas son cuidadosamente recolectadas por cultivadores apasionados, quienes mantienen viva la tradición de la recolección sostenible directamente del océano. Estas ostras se destacan por su sabor pronunciado, equilibrado con un toque salino que realza su textura suave y carnosa. La elección perfecta para los amantes del marisco. Disfruta de la frescura y autenticidad de estas joyas marinas, con entrega a domicilio en menos de 24 horas, garantizando su calidad y sabor en su mejor momento.",
+            //'description_2' => "La ostra francesa es un verdadero placer para los amantes del marisco, conocida por su delicado sabor y textura inconfundible. <br>En Rutas del Mar, contamos con las ostras de los mejores cultivadores franceses para que disfrutes de este manjar todo el año. Con su frescura incomparable, la ostra francesa se convierte en una opción excepcional para cualquier ocasión especial o para los paladares más exigentes.",
             'slug' => "ostras-bretaña",
             'origin_general' => "Francia",
             'origin_specific' => "Bretaña",
@@ -141,8 +142,9 @@ class FakeEnvironmentSeeder extends Seeder
 
         $oisters
         ->setTranslation('name', 'en', 'Oysters')
-        ->setTranslation('description_1', 'en', 'Our fresh oysters are carefully harvested by passionate cultivators who uphold the tradition of sustainable gathering directly from the ocean. These oysters stand out for their pronounced flavor, balanced with a salty touch that enhances their smooth and meaty texture. The perfect choice for seafood lovers. Enjoy the freshness and authenticity of these marine treasures, with home delivery in less than 24 hours, ensuring their quality and flavor at their best.')
-        ->setTranslation('description_2', 'en', 'The French oyster is a true delight for seafood lovers, known for its delicate flavor and unmistakable texture. <br>At Rutas del Mar, we source oysters from the finest French farmers so you can enjoy this delicacy all year round. With its unparalleled freshness, the French oyster becomes an exceptional option for any special occasion or for the most discerning palates.')
+        ->setTranslation('description_1', 'en', 'Sourced from France. Atlantic Ocean')
+        ->setTranslation('description_2', 'en', 'Our fresh oysters are carefully harvested by passionate cultivators who uphold the tradition of sustainable gathering directly from the ocean. These oysters stand out for their pronounced flavor, balanced with a salty touch that enhances their smooth and meaty texture. The perfect choice for seafood lovers. Enjoy the freshness and authenticity of these marine treasures, with home delivery in less than 24 hours, ensuring their quality and flavor at their best.')
+        //->setTranslation('description_2', 'en', 'The French oyster is a true delight for seafood lovers, known for its delicate flavor and unmistakable texture. <br>At Rutas del Mar, we source oysters from the finest French farmers so you can enjoy this delicacy all year round. With its unparalleled freshness, the French oyster becomes an exceptional option for any special occasion or for the most discerning palates.')
         ->setTranslation('origin_general', 'en', 'France')
         ->setTranslation('origin_specific', 'en', 'Brittany')
         ->setTranslation('slug', 'en', 'oysters-brittany')

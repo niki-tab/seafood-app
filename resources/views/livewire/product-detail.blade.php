@@ -29,7 +29,7 @@
         </div>
 
         <!-- Product Information -->
-        <div class="flex flex-col justify-between px-8 md:px-0 mt-2 md:w-full w-full md:mx-0 mx-auto">
+        <div class="flex flex-col px-8 md:px-0 mt-2 md:w-4/5 w-full md:mx-0 mx-auto">
             <div>
                 @if($product->out_of_stock == false)
                     <p class="text-l text-white my-6 bg-green-600 rounded px-2 inline-block">{{ trans('pages/home.label-product-stock-available') }}</p>
@@ -38,7 +38,7 @@
                 @endif
                 <h1 class="text-4xl font-bold text-gray-800">{{ $product->name }}</h1>
 
-                <p class="text-gray-600 mt-4 w-full">{{ $product->description_1 }}</p>
+                <p class="text-gray-600 mt-4 w-full">{{ $product->description_2 }}</p>
 
                 <div class="text-xl font-semibold text-gray-800 mt-6">
                 {{ trans('pages/product-detail.label-price') }}: {{ number_format($specificPrice, 2) }}€
@@ -47,8 +47,7 @@
 
             <!-- Quantity Selector and Add to Cart Button on the Same Row -->
             <div class="flex items-center justify-between mt-8 space-x-4 w-full">
-                <div class="flex flex-col space-y-4 w-full md:w-4/5"> <!-- Stacking the label, input, and button vertically -->
-
+                <div class="flex flex-col space-y-4 w-full md:w-full"> <!-- Stacking the label, input, and button vertically -->
                     <!-- Size Variations Select Field -->
                     @if(!empty($productSizeVariations) && count($productSizeVariations) > 0)
                         <div class="flex flex-col">
@@ -61,7 +60,7 @@
                         </div>
                     @endif
                     @if($selectedSize)
-                        <!-- Size Variations Select Field -->
+                        <!-- Quanity Variations Select Field -->
                         @if(!empty($test) && count($test) > 0)
                         <div class="flex flex-col mt-4">
                             <label for="quantity" class="text-gray-700 mb-4">{{ trans('pages/product-detail.label-select-product-quantity') }}:</label>
@@ -71,11 +70,6 @@
                                 @endforeach
                             </select>
                         </div>
-                        @else
-                            <div class="flex flex-col">
-                                <label for="quantity" class="text-gray-700">{{ trans('pages/product-detail.label-quantity') }}:</label>
-                                <input type="number" id="quantity" wire:model="quantity" class="border border-gray-300 rounded-lg px-4 py-2 w-24" min="1" value="1">
-                            </div>
                         @endif
                     @endif
                     <!-- Add to Cart Button -->

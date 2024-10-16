@@ -16,6 +16,8 @@ class ProductDetail extends Component
 
     public $productQuantityVariations;
 
+    public $productHasQuantityVariation;
+
     public $productSizeQuantityVariationsPrice;
     
     public $selectedSize;
@@ -62,6 +64,17 @@ class ProductDetail extends Component
         })
         ->values();
 
+        $productVariationLowestPrice = ProducSizeVariationQuantityVariationPriceModel::where([
+                                                                                                ["product_id", $productId]
+                                                                                            ])
+                                                                                            ->orderBy('sale_price', "ASC") 
+                                                                                            ->first();
+
+        if($productVariationLowestPrice){
+
+            $this->specificPrice = $productVariationLowestPrice->sale_price;
+
+        }
         /*$this->test = [
             ['id' => 1, 'quantity_name' => 'Small', 'order' => 1],
             ['id' => 2, 'quantity_name' => 'Medium', 'order' => 2],
@@ -75,15 +88,20 @@ class ProductDetail extends Component
             foreach ($producSizeVariationQuantityVariationPriceModel as $producSizeVariationQuantityVariationPriceModelIndividual){
                 
                 $this->test[] = [
-                    'id' => $productQuantityVariationModel->id,
-                    'quantity_name' => $productQuantityVariationModel->quantity_name, // Append a random number to the quantity name
-                    'order' => $productQuantityVariationModel->order, // Assuming the order corresponds to the ID
+                    'id' => $producSizeVariationQuantityVariationPriceModelIndividual->id,
+                    'quantity_name' => $producSizeVariationQuantityVariationPriceModelIndividual->quantity_name, // Append a random number to the quantity name
+                    'order' => $producSizeVariationQuantityVariationPriceModelIndividual->order, // Assuming the order corresponds to the ID
                 ];
 
             }
 
+            $this->productHasQuantityVariation = true;
+
         }else{
+
             $this->test = null;
+            $this->productHasQuantityVariation = false;
+
         }
         
     }
@@ -125,21 +143,31 @@ class ProductDetail extends Component
             }
 
         }
-        $this->test = collect($this->test)->sortBy('order')->values()->all();
-        
-        $producSizeVariationQuantityVariationPriceModel = ProducSizeVariationQuantityVariationPriceModel::where(
-            [
-                ["product_size_variation_id", $this->selectedSize],
-                ["product_quantity_variation_id", $this->test[0]["id"]],
 
-            ]
-        )->first();
+        if($this->productHasQuantityVariation == true){
 
-        if($producSizeVariationQuantityVariationPriceModel){
+            $this->test = collect($this->test)->sortBy('order')->values()->all();
+            
+            $producSizeVariationQuantityVariationPriceModel = ProducSizeVariationQuantityVariationPriceModel::where(
+                [
+                    ["product_size_variation_id", $this->selectedSize],
+                    ["product_quantity_variation_id", $this->test[0]["id"]],
 
-            $this->specificPrice = $producSizeVariationQuantityVariationPriceModel->sale_price;
-            $this->selectedQuantity = $producSizeVariationQuantityVariationPriceModel->product_quantity_variation_id;
+                ]
+            )->first();
+
+            if($producSizeVariationQuantityVariationPriceModel){
+
+                $this->specificPrice = $producSizeVariationQuantityVariationPriceModel->sale_price;
+                $this->selectedQuantity = $producSizeVariationQuantityVariationPriceModel->product_quantity_variation_id;
+            }
+
+        }else{
+
+            $this->specificPrice = $producSizeVariationQuantityVariationPriceModel[0]->sale_price;
+
         }
+
     }
 
     public function updateSelectedQuanitity($value)
