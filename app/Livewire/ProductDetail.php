@@ -42,6 +42,8 @@ class ProductDetail extends Component
         
         if($this->product){
 
+            $this->setSeo();
+
             $productId = $this->product->id;
             $this->productSizeVariations = ProductSizeVariationModel::where("product_id", $productId)->with('producQuantityVariations')->get();
 
@@ -190,7 +192,36 @@ class ProductDetail extends Component
         
     }
 
-    
+    public function setSeo(){
+
+        $productName = strtolower($this->product->name);
+        $productFoodType = $this->product->food_type;
+
+        if($this->lang == "en"){
+
+            seo()
+            ->title($productFoodType.": ".$productName, env('APP_NAME'))
+            ->description('Buy fresh '.$productName.' from our marketplace with delivery in less than 24 hours. Support oyster farmers and fishers while enjoying sustainable seafood at the best price with Rutas Del Mar!')
+            ->images(
+                env('APP_LOGO_1_PATH'),
+                    env('APP_LOGO_2_PATH'),
+            );
+
+        }else{
+
+            seo()
+            ->title($productFoodType.": ".$productName, env('APP_NAME'))
+            ->description('Compra '.$productName.' frescas en nuestro marketplace con entrega en menos de 24 horas. Apoya a los ostricultores y pescadores mientras disfrutas de mariscos sostenibles al mejor precio con Rutas Del Mar!')
+            ->images(
+                env('APP_LOGO_1_PATH'),
+                    env('APP_LOGO_2_PATH'),
+            );
+
+        }
+
+        
+        
+    }
 
     public function render()
     {

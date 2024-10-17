@@ -19,8 +19,9 @@ return new class extends Migration
             $table->longText('description_2')->nullable();
             $table->string('origin_general');
             $table->string('origin_specific');
-            $table->string('product_type')->nullable();
-            $table->string('product_species_type')->nullable();
+            $table->string('product_type');
+            $table->string('food_type');
+            $table->string('species_type');
             $table->float('price_from');
             $table->string('sell_unit');
             $table->string('sell_mode');
@@ -29,6 +30,8 @@ return new class extends Migration
             $table->boolean('out_of_stock');
             $table->string('image')->nullable();
             $table->boolean('featured')->default(false);
+            $table->string('meta_title')->nullable();
+            $table->string('meta_description')->nullable();
             $table->timestamps();
         });
     }

@@ -26,8 +26,9 @@ class FakeEnvironmentSeeder extends Seeder
             'slug' => "centollo-bretaña",
             'origin_general' => "Francia",
             'origin_specific' => "Bretaña",
-            'product_type' => "simple",
-            'product_species_type' => "crab",
+            'product_type' => "Simple",
+            'food_type' => "Marisco",
+            'species_type' => "Crab",
             'price_from' => 20,
             'sell_unit' => "unit",
             'sell_mode' => "per-unit",
@@ -41,6 +42,7 @@ class FakeEnvironmentSeeder extends Seeder
 
         $spiderCrab
         ->setTranslation('name', 'en', 'Spider crab')
+        ->setTranslation('food_type', 'en', 'Seafood')
         ->setTranslation('description_1', 'en', 'Sourced from France. Atlantic Ocean')
         ->setTranslation('description_2', 'en', 'The French spider crab is synonymous with quality and refined flavor. An exceptional product that you can enjoy at any time of the year. At Rutas del Mar, we bring the freshest spider crabs directly from the French coasts, carefully selected to offer you the best of the sea. The French spider crab is an exquisite alternative to the Galician spider crab.')
         ->setTranslation('origin_general', 'en', 'France')
@@ -127,8 +129,9 @@ class FakeEnvironmentSeeder extends Seeder
             'slug' => "ostras-bretaña",
             'origin_general' => "Francia",
             'origin_specific' => "Bretaña",
-            'product_type' => "variable",
-            'product_species_type' => "oister",
+            'product_type' => "Variable",
+            'food_type' => "Marisco",
+            'species_type' => "Oister",
             'price_from' => 10,
             'sell_unit' => "kg",
             'sell_mode' => "per-box",
@@ -142,6 +145,7 @@ class FakeEnvironmentSeeder extends Seeder
 
         $oisters
         ->setTranslation('name', 'en', 'Oysters')
+        ->setTranslation('food_type', 'en', 'Seafood')
         ->setTranslation('description_1', 'en', 'Sourced from France. Atlantic Ocean')
         ->setTranslation('description_2', 'en', 'Our fresh oysters are carefully harvested by passionate cultivators who uphold the tradition of sustainable gathering directly from the ocean. These oysters stand out for their pronounced flavor, balanced with a salty touch that enhances their smooth and meaty texture. The perfect choice for seafood lovers. Enjoy the freshness and authenticity of these marine treasures, with home delivery in less than 24 hours, ensuring their quality and flavor at their best.')
         //->setTranslation('description_2', 'en', 'The French oyster is a true delight for seafood lovers, known for its delicate flavor and unmistakable texture. <br>At Rutas del Mar, we source oysters from the finest French farmers so you can enjoy this delicacy all year round. With its unparalleled freshness, the French oyster becomes an exceptional option for any special occasion or for the most discerning palates.')
@@ -330,8 +334,9 @@ class FakeEnvironmentSeeder extends Seeder
             'slug' => "mero-islas-canarias",
             'origin_general' => "España",
             'origin_specific' => "Lanzarote",
-            'product_type' => "simple",
-            'product_species_type' => "grouper",
+            'product_type' => "Simple",
+            'food_type' => "Pescado",
+            'species_type' => "Grouper",
             'price_from' => 25,
             'sell_unit' => "kg",
             'sell_mode' => "per-kilo",
@@ -345,6 +350,7 @@ class FakeEnvironmentSeeder extends Seeder
         
         $grouper
         ->setTranslation('name', 'en', 'Grouper')
+        ->setTranslation('food_type', 'en', 'Fish')
         ->setTranslation('description_1', 'en', 'Sourced from Spain. Atlantic Ocean')
         ->setTranslation('description_2', 'en', 'The grouper is a delicacy of the sea, appreciated for its firm flesh and mild flavor, perfect for the most discerning palates. At Rutas del Mar, we select the finest grouper specimens from the Spanish coasts, ensuring freshness and quality in every piece. This versatile fish is ideal for a wide variety of culinary preparations and is available year-round, so you can enjoy its unparalleled flavor at any time.')
         ->setTranslation('origin_general', 'en', 'Spain')

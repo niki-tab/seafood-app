@@ -22,7 +22,8 @@ class ProductModel extends Model
         'origin_general',
         'origin_specific',
         'product_type',
-        'product_species_type',
+        'species_type',
+        'food_type',
         'price_from',
         'sell_unit',
         'sell_mode',
@@ -44,7 +45,8 @@ class ProductModel extends Model
         'origin_general' => 'string',
         'origin_specific' => 'string',
         'product_type' => 'string',
-        'product_species_type' => 'string',
+        'species_type' => 'string',
+        'food_type' => 'string',
         'price_from' => 'float',
         'sell_unit' => 'string',
         'sell_mode' => 'string',
@@ -53,7 +55,9 @@ class ProductModel extends Model
         'out_of_stock' => 'boolean',
         'image' => 'string',
         'featured' => 'boolean',
+        'meta_title' => 'string',
+        'meta_description' => 'string',
     ];
 
-    public $translatable = ['name', 'description_1', 'description_2', 'origin_general', 'origin_specific', 'slug'];
+    public $translatable = ['name', 'description_1', 'description_2', 'origin_general', 'origin_specific', 'slug', 'meta_title', 'meta_description', 'food_type'];
 }
