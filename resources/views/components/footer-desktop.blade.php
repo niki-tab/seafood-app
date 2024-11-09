@@ -22,7 +22,7 @@
             <div class="col-span-2 text-left">
                 <h4 class="font-bold text-lg mb-2">Contacto</h4>
                 <a href="tel:+34606986218" class="block hover:underline text-sm">+34 606986218</a>
-                <a href="mailto:nicolas.tabares.wiede@gmail.com" class="block hover:underline text-sm">nicolas.tabares.wiede@gmail.com</a>
+                <a href="mailto:nicolas.tabares@rutasdelmar.com" class="block hover:underline text-sm">nicolas.tabares@rutasdelmar.com</a>
             </div>
         </div>
 

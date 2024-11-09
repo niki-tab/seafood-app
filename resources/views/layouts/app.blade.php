@@ -11,7 +11,7 @@
     <link rel="icon" href="{{ asset("images/icons/favicon.ico") }}" type="image/x-icon">
     @livewireStyles
 </head>
-<body class="min-h-screen flex flex-col">
+<body class="min-h-screen flex flex-col bg-broken-white-color">
     @livewireScripts
     <header class="z-10">
         <x-header-desktop/>

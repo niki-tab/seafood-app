@@ -14,6 +14,7 @@ export default {
         'button-color-1': '#091235',
         'button-color-1-hover': '#FFDE21',
         'text-color-1-hover': '#FFDE21',
+        'broken-white-color': '#F1F0EB',
         //'button-color-1': '#091235',
       },
       fontFamily: {

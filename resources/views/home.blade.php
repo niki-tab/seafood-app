@@ -11,7 +11,7 @@
 </section>
 
 <!-- About Us Section -->
-<section class="py-16 bg-gray-100 md:px-36">
+<section class="py-16 bg-white md:px-36">
     <div class="container mx-auto px-6 text-center">
         <h1 class="text-3xl font-bold mb-4">{{ trans('pages/home.about_title') }}</h1>
         <h2 class="text-lg mb-8">{{ trans('pages/home.about_description_1') }}</h2>
