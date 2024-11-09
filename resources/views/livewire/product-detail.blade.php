@@ -7,22 +7,22 @@
             <!-- Carousel Below the Main Image -->
             <div class="w-3/4 max-w-3xl mt-8 mx-auto">
                 <!-- Carousel -->
-                <div class="flex justify-between space-x-4" style="height: calc(100% / 1;">
+                <div class="flex justify-between space-x-4" style="">
                     <!-- Image 1 -->
                     <div class="flex-1">
-                        <img src="{{ asset($product->image) }}" alt="Image 1" class="w-full h-full object-cover shadow-lg">
+                        <img src="{{ asset($product->image) }}" alt="Image 1" class="w-full object-cover shadow-lg md:h-32 h-18">
                     </div>
                     <!-- Vertical Line -->
                     <div class="w-1 bg-gray-300"></div>
                     <!-- Image 2 -->
                     <div class="flex-1">
-                        <img src="{{ asset($product->image) }}" alt="Image 2" class="w-full h-full object-cover shadow-lg">
+                        <img src="{{ asset($product->image) }}" alt="Image 2" class="w-full object-cover shadow-lg md:h-32 h-18">
                     </div>
                     <!-- Vertical Line -->
                     <div class="w-1 bg-gray-300"></div>
                     <!-- Image 3 -->
                     <div class="flex-1">
-                        <img src="{{ asset($product->image) }}" alt="Image 3" class="w-full h-full object-cover shadow-lg">
+                        <img src="{{ asset($product->image) }}" alt="Image 3" class="w-full object-cover shadow-lg md:h-32 h-18">
                     </div>
                 </div>
             </div>
