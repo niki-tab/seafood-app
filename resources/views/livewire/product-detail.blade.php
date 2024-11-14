@@ -2,7 +2,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 md:gap-8 gap-0 md:gap-0 mb-20">
         <!-- Product Image -->
         <div class="flex flex-col items-center md:items-start justify-center md:pt-0 md:mt-0 mt-8">
-            <img src="{{ asset($product->image) }}" alt="{{ $product->name }}" class="mx-auto md:w-3/4 4/5 h-4/6 object-cover rounded-lg shadow-lg">
+        <img src="{{ asset($product->image) }}" alt="{{ $product->name }}" class="mx-auto md:w-3/4 4/5 h-4/6 object-cover rounded-lg shadow-lg border-2 border-main-theme-color">
 
             <!-- Carousel Below the Main Image -->
             <div class="w-3/4 max-w-3xl mt-8 mx-auto">
@@ -10,19 +10,19 @@
                 <div class="flex justify-between space-x-4" style="">
                     <!-- Image 1 -->
                     <div class="flex-1">
-                        <img src="{{ asset($product->image) }}" alt="Image 1" class="w-full object-cover shadow-lg md:h-32 h-18">
+                        <img src="{{ asset($product->image) }}" alt="Image 1" class="w-full object-cover shadow-lg md:h-32 h-18 border-2 border-main-theme-color">
                     </div>
                     <!-- Vertical Line -->
                     <div class="w-1 bg-gray-300"></div>
                     <!-- Image 2 -->
                     <div class="flex-1">
-                        <img src="{{ asset($product->image) }}" alt="Image 2" class="w-full object-cover shadow-lg md:h-32 h-18">
+                        <img src="{{ asset($product->image) }}" alt="Image 2" class="w-full object-cover shadow-lg md:h-32 h-18 border-2 border-main-theme-color">
                     </div>
                     <!-- Vertical Line -->
                     <div class="w-1 bg-gray-300"></div>
                     <!-- Image 3 -->
                     <div class="flex-1">
-                        <img src="{{ asset($product->image) }}" alt="Image 3" class="w-full object-cover shadow-lg md:h-32 h-18">
+                        <img src="{{ asset($product->image) }}" alt="Image 3" class="w-full object-cover shadow-lg md:h-32 h-18 border-2 border-main-theme-color">
                     </div>
                 </div>
             </div>

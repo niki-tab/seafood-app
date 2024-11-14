@@ -17,6 +17,89 @@ class FakeEnvironmentSeeder extends Seeder
      */
     public function run(): void
     {   
+
+        $vieira = ProductModel::create([
+
+            'id' => (string) Str::uuid(),
+            'name' => "Vieira",
+            'description_1' => "Procedente de Francia. Oceano Atlántico",
+            'description_2' => "La vieira es un marisco delicado y sabroso, apreciado por su textura suave y su sabor único. En Rutas del Mar, te ofrecemos vieiras francesas frescas y de la mejor calidad, traídas directamente desde las costas más puras. Ideal para quienes buscan un toque gourmet en sus platos, la vieira es el manjar perfecto del mar",
+            'slug' => "vieira-bretaña",
+            'origin_general' => "Francia",
+            'origin_specific' => "Bretaña",
+            'product_type' => "Simple",
+            'food_type' => "Marisco",
+            'species_type' => "mollusk",
+            'price_from' => 3.50,
+            'sell_unit' => "unit",
+            'sell_mode' => "per-unit",
+            'stock' => "50",
+            'stock_unit' => "unit",
+            'out_of_stock' => true,
+            'image' => 'images/product/vieira_product_1.png',
+            'featured' => true,
+
+        ]);
+
+        $vieira
+        ->setTranslation('name', 'en', 'Scallop')
+        ->setTranslation('food_type', 'en', 'Seafood')
+        ->setTranslation('description_1', 'en', 'Sourced from France. Atlantic Ocean')
+        ->setTranslation('description_2', 'en', 'The scallop is a delicate and flavorful seafood, appreciated for its smooth texture and unique taste. At Rutas del Mar, we offer fresh French scallops of the highest quality, brought directly from the purest coasts. Ideal for those looking for a gourmet touch in their dishes, the scallop is the perfect seafood delicacy.')
+        ->setTranslation('origin_general', 'en', 'France')
+        ->setTranslation('origin_specific', 'en', 'Brittany')
+        ->setTranslation('slug', 'en', 'scallop-brittany')
+        ->save();
+
+        $vieiraCrabProductSizeVariation1 = ProductSizeVariationModel::create([
+            'id' => (string) Str::uuid(),
+            'product_id' => $vieira->id,
+            'size_name' => "Vieira Mediana",
+            'size_description' => "Vieira Mediana",
+            'order' => 1,
+        ]);
+
+        $vieiraCrabProductSizeVariation1
+        ->setTranslation('size_name', 'en', 'Medium Size Scallop')
+        ->setTranslation('size_description', 'en', 'Medium Size Scallop')
+        ->save();
+
+        $vieiraCrabProductSizeVariation2 = ProductSizeVariationModel::create([
+            'id' => (string) Str::uuid(),
+            'product_id' => $vieira->id,
+            'size_name' => "Vieira Grande",
+            'size_description' => "Vieira Grande",
+            'order' => 2,
+        ]);
+        
+        $vieiraCrabProductSizeVariation2
+        ->setTranslation('size_name', 'en', 'Big Size Scallop')
+        ->setTranslation('size_description', 'en', 'Big Size Scallop')
+        ->save();
+
+        $vieiraVariationPrices1 = ProducSizeVariationQuantityVariationPriceModel::create([
+            'id' => (string) Str::uuid(),
+            'product_id' => $vieira->id,
+            'product_size_variation_id' => $vieiraCrabProductSizeVariation1->id,
+            'product_quantity_variation_id' => null,
+            'sale_price' => 3.50,
+            'discounted_price' => null,
+            'currency' => "€",
+        ]);
+
+        $vieiraVariationPrices2 = ProducSizeVariationQuantityVariationPriceModel::create([
+            'id' => (string) Str::uuid(),
+            'product_id' => $vieira->id,
+            'product_size_variation_id' => $vieiraCrabProductSizeVariation2->id,
+            'product_quantity_variation_id' => null,
+            'sale_price' => 4.00,
+            'discounted_price' => null,
+            'currency' => "€",
+        ]);
+
+
+
+
         $spiderCrab = ProductModel::create([
 
             'id' => (string) Str::uuid(),
@@ -35,7 +118,7 @@ class FakeEnvironmentSeeder extends Seeder
             'stock' => "50",
             'stock_unit' => "unit",
             'out_of_stock' => true,
-            'image' => 'images/product/centolla_product.jpg',
+            'image' => 'images/product/centolla_product_1.png',
             'featured' => true,
 
         ]);
@@ -138,7 +221,7 @@ class FakeEnvironmentSeeder extends Seeder
             'stock' => "50",
             'stock_unit' => "unit",
             'out_of_stock' => false,
-            'image' => 'images/product/ostras_product.jpg',
+            'image' => 'images/product/ostras_product_1.png',
             'featured' => true,
 
         ]);
@@ -325,7 +408,7 @@ class FakeEnvironmentSeeder extends Seeder
         ]);
 
 
-        $grouper = ProductModel::create([
+        /*$grouper = ProductModel::create([
 
             'id' => (string) Str::uuid(),
             'name' => "Mero",
@@ -356,6 +439,6 @@ class FakeEnvironmentSeeder extends Seeder
         ->setTranslation('origin_general', 'en', 'Spain')
         ->setTranslation('origin_specific', 'en', 'Lanzarote')
         ->setTranslation('slug', 'en', 'grouper-canary-islands')
-        ->save();
+        ->save();*/
     }
 }

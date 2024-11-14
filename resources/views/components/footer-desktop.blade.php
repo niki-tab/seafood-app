@@ -3,7 +3,7 @@
         <div class="grid grid-cols-10 gap-4 mt-8 mb-8"> 
             <!-- Column 1 -->
             <div class="col-span-4 text-center">
-                <img src="{{ asset("images/logo/logo_centollo_02.png") }}" alt="logo" width="170" height="78" class="mx-auto block"></img>
+                <img src="{{ asset("images/logo/logo_new_01.png") }}" alt="logo" width="220" height="" class="mx-auto block"></img>
             </div>
 
             <!-- Column 2 -->

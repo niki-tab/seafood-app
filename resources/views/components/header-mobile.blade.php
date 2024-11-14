@@ -3,7 +3,7 @@
         <!-- Logo (on the left) -->
         <div class="text-left mt-2 p-4">
             <a href="/{{app()->getLocale()}}" class="">
-                <img src="{{ asset('images/logo/logo_centollo_01.png') }}" alt="logo" width="200" height="78">
+                <img src="{{ asset('images/logo/logo_new_02.png') }}" alt="logo" width="200" height="78">
             </a>
         </div>
 

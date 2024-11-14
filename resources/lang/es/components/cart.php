@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title' => 'Carrito de Compras',
+    'title' => 'Carrito',
     'price' => 'Precio',
     'remove' => 'Eliminar',
     'total' => 'Total',
