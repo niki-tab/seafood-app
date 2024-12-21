@@ -2,7 +2,7 @@
     <div class="grid grid-cols-1 md:grid-cols-2 md:gap-8 gap-0 md:gap-0 mb-20">
         <!-- Product Image -->
         <div class="flex flex-col items-center md:items-start justify-center md:pt-0 md:mt-0 mt-8">
-            <img src="{{ asset($product->image) }}" alt="{{ $product->name }}" class="mx-auto md:w-3/4 4/5 h-4/6 object-cover rounded-lg shadow-lg">
+            <img src="{{ asset($product->image) }}" alt="{{ $product->name }}" class="mx-auto md:w-3/4 object-cover rounded-lg shadow-lg">
 
             <!-- Carousel Below the Main Image -->
             <div class="w-3/4 max-w-3xl mt-8 mx-auto">
