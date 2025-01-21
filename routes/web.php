@@ -65,6 +65,9 @@ Route::group(['prefix' => '{locale}', 'middleware' => 'set.locale'], function ()
     })->name('contact.send.en')->where('locale', 'en');
 
 
+
+
+
     
     
     Route::get('/', [HomeController::class, 'index'])->name('home.show');
@@ -76,3 +79,37 @@ Route::get('/test', function () {
     return view('pages/test');
 })->name('test');
 
+
+
+
+
+
+
+
+Route::group(['prefix' => '{locale}', 'middleware' => 'set.locale'], function () {
+
+    //New project
+    Route::middleware('auth')->group(function () {
+        
+        Route::get('/admin', function () {
+            return view('pages/admin/home');
+        })->name('admin.home.index');
+        
+    });
+
+        //New project
+        Route::middleware('guest')->group(function () {
+        
+            Route::get('/login', function () {
+                return view('pages/auth/login');
+            })->name('auth.login');
+        
+            Route::get('/register', function () {
+                return view('pages/auth/register');
+            })->name('auth.register');
+            
+        });
+
+
+
+});

@@ -15,6 +15,6 @@ class ProductInformationTab extends Component
     }
     public function render()
     {
-        return view('livewire.product-information-tab')->extends('layouts.app');
+        return view('livewire.product-information-tab')->layout('layouts.app');
     }
 }
